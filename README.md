@@ -60,4 +60,4 @@ python scripts/generate_clamp.py --center 0.3 --width 0.1   # 300장, 약 13분
 2. Radford et al. Learning Transferable Visual Models From Natural Language Supervision. ICML 2021.
 3. Rombach et al. High-Resolution Image Synthesis with Latent Diffusion Models. CVPR 2022.
 4. Luccioni et al. Stable Bias: Evaluating Societal Representations in Diffusion Models. NeurIPS 2023.
-5. Chuang et al. Debiasing Vision-Language Models via Biased Prompts. arXiv:2302.00070, 2023.
+
