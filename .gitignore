@@ -1,0 +1,18 @@
+# 가상환경
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# 모델 가중치 (수 GB, scripts/download_model.py로 다시 받는다)
+models/
+
+# 생성 이미지 (2,400장, scripts/generate*.py와 같은 시드로 다시 만든다)
+outputs/images/
+outputs/images_clamp/
+
+# 기타
+notebooks/test.png
+.vscode/
+Thumbs.db
+desktop.ini

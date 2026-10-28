@@ -1,0 +1,15 @@
+# PyTorch는 CUDA 버전에 맞춰 먼저 설치한다 (RTX 50 시리즈는 CUDA 12.8 이상)
+#   pip install torch --index-url https://download.pytorch.org/whl/cu128
+diffusers
+transformers
+accelerate
+safetensors
+huggingface_hub
+numpy
+pandas
+scikit-learn
+matplotlib
+plotly
+adjustText
+pillow
+ipykernel
