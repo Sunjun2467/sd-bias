@@ -9,7 +9,7 @@ Stable Diffusion 1.5의 텍스트 인코더 안에서 **성별 방향**을 찾�
 |---|---|
 | 성별 방향이 있나? | 있다. 방향 계산에 쓰지 않은 3쌍(brother/sister 등)도 3층부터 모두 남성 쪽으로 갈린다. 최종 출력에서 대표 방향 하나가 차이의 56.8%를 설명한다 |
 | 몇 번째 층에서 생기나? | 성별 인식은 1~3층(probe 정확도 0.8~0.98), 직업이 성별 쪽으로 기우는 것은 5층 이후 강해진다 |
-| 방향을 옮기면 이미지가 바뀌나? | 바뀐다. lam −1에서 남성 비율 0~3%, +1에서 81~100%. 무작위 방향은 원본과 차이 3%p 이하 |
+| 방향을 옮기면 이미지가 바뀌나? | 바뀐다. lam −1에서 남성 비율 0~3%, +1에서 81~100%. 같은 거리(lam 0까지)를 무작위 방향으로 옮기면 원본과 차이 3%p 이하 |
 | 가운데로 옮기면 반반이 되나? | 아니다. lam 0에서 6개 직업 모두 여성 다수이고, 반반이 되는 지점은 CEO +0.18 ~ nanny +0.45로 직업마다 다르다 |
 | 클리핑(lam을 +0.2~+0.4로 제한) | 남성 비율 범위 0.00~0.98 → 0.19~0.82, 50%까지의 평균 거리 0.41 → 0.25. 6개 중 5개가 생성 전 예측과 ±0.04 이내 |
 
@@ -29,7 +29,7 @@ figures/      결과 그림, layer_slider.html (브라우저로 연다)
 
 ## 재현
 
-환경: Windows 11, Python 3.11.9, RTX 5060 (8GB), PyTorch + CUDA 12.8
+환경: Windows 11, Python 3.11.9, RTX 5060 (8GB), PyTorch 2.11.0 + CUDA 12.8, diffusers 0.42.1, transformers 5.21.0, scikit-learn 1.9.1
 
 ```bash
 python -m venv .venv
@@ -37,7 +37,7 @@ python -m venv .venv
 pip install torch --index-url https://download.pytorch.org/whl/cu128
 pip install -r requirements.txt
 
-python scripts/download_model.py                         # SD 1.5, CLIP ViT-L/14
+python scripts/download_models.py                        # SD 1.5, CLIP ViT-L/14
 python scripts/generate.py                               # 2,100장, 약 1.5시간
 python scripts/generate_clamp.py --center 0.3 --width 0.1   # 300장, 약 13분
 ```
